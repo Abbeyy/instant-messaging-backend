@@ -3,11 +3,14 @@ import {User} from '../models/user.js'
 
 const currentUserRouter = express.Router();
 
-currentUserRouter.get('/', (req, res, next) => {
-  const email = req.body.email
+currentUserRouter.get('/getCurrentUser', (req, res, next) => {
+  const email = req.query.email
+
 
   if (email) {
-    User.findByEmail(email).then(data => res.json(data)).catch(next)
+    User.findByEmail(email).then(data => 
+       res.json(data)
+    ).catch(next)
   }
 });
 

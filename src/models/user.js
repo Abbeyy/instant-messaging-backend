@@ -4,10 +4,6 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 export const UserSchema = new Schema({
-  id: {
-    type: String, 
-    required: true
-  },
   email: {
     type: String, 
     required: true
@@ -38,9 +34,8 @@ export const UserSchema = new Schema({
   },
 });
 
-UserSchema.methods.findByEmail = (email) => 
-   this.find({email})
+UserSchema.statics.findByEmail = function(email) { 
+   return this.find({email: email.trim()})
+}
 
-
-
-export const User = mongoose.model('currentUser', UserSchema);
+export const User = mongoose.model('User', UserSchema);

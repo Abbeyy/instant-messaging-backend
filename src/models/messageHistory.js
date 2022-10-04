@@ -19,4 +19,4 @@ export const MessageHistorySchema = new Schema({
   }
 });
 
-export const MessageHistory = mongoose.model('messageHistory', MessageHistorySchema);
+export const MessageHistory = mongoose.model('MessageHistory', MessageHistorySchema);
