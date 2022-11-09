@@ -2,6 +2,7 @@ import { ContactUserSchema } from './contactUser.js';
 import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
+var ObjectId = mongoose.Types.ObjectId;
 
 export const UserSchema = new Schema({
   email: {
@@ -27,7 +28,10 @@ export const UserSchema = new Schema({
     }
   }, 
   contacts: {
-    type: [ContactUserSchema],
+    type: [{
+      type: ObjectId,
+      ref: 'ContactUser',
+    }],
     required: function() {
         return typeof this.country === 'undefined' || (this.country != null && typeof this.country != 'string')
     },

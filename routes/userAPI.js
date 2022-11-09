@@ -1,10 +1,10 @@
-import express from 'express'
-import {User} from '../../models/user.js'
+// import express from 'express'
+// import {User} from '../../models/user.js'
 
-const userRouter = express.Router();
+// const userRouter = express.Router();
 
-userRouter.get('/all', (req, res, next) => {
-    User.find({}).then(data => res.json(data)).catch(next)
-});
+// userRouter.get('/all', (req, res, next) => {
+//     User.find({}).then(data => res.json(data)).catch(next)
+// });
 
-module.exports = userRouter;
+// module.exports = userRouter;
