@@ -1,4 +1,3 @@
-import { ContactUserSchema } from './contactUser.js';
 import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;

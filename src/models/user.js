@@ -1,4 +1,3 @@
-import { ContactUserSchema } from './contactUser.js';
 import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
@@ -30,7 +29,7 @@ export const UserSchema = new Schema({
   contacts: {
     type: [{
       type: ObjectId,
-      ref: 'ContactUser',
+      ref: 'User',
     }],
     required: function() {
         return typeof this.country === 'undefined' || (this.country != null && typeof this.country != 'string')

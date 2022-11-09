@@ -1,6 +1,4 @@
-import { ContactUserSchema } from './contactUser.js';
 import mongoose from 'mongoose'
-import { MessagesSchema } from './messages.js';
 
 const Schema = mongoose.Schema;
 var ObjectId = mongoose.Types.ObjectId;
@@ -8,11 +6,11 @@ var ObjectId = mongoose.Types.ObjectId;
 export const MessageHistorySchema = new Schema({
   sender: {
     type: ObjectId,
-    ref: 'ContactUser',
+    ref: 'User',
   },
   recipient: {
     type: ObjectId,
-    ref: 'ContactUser',
+    ref: 'User',
   },
   messageList: [{
     type: ObjectId,

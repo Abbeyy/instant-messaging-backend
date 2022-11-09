@@ -4,12 +4,11 @@ const app = express();
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 
-// import userRouter from './src/routes/userAPI.js'
 import currentUserRouter from './src/routes/currentUserAPI.js'
-// import contactUserRouter from './src/routes/contactUserAPI.js'
 
 import dotenv from 'dotenv'
 import messageHistoryRouter from './src/routes/messageHistoryAPI.js';
+import userRouter from './src/routes/userAPI.js';
 
 dotenv.config();
 
@@ -37,10 +36,8 @@ app.listen(port, () => {
 
 app.use(bodyParser.json());
 
-// app.use('/users', userRouter);
+app.use('/user', userRouter);
 
 app.use('/currentUser', currentUserRouter);
-
-// app.use('/contacts', contactUserRouter);
 
 app.use('/messageHistory', messageHistoryRouter);
