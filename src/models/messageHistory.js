@@ -14,7 +14,10 @@ export const MessageHistorySchema = new Schema({
     type: ObjectId,
     ref: 'ContactUser',
   },
-  messageList: [{type: MessagesSchema}]
+  messageList: [{
+    type: ObjectId,
+    ref: 'Messages',
+  }]
 });
 
 MessageHistorySchema.statics.findBySenderId = function(senderId) {
