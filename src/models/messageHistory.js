@@ -4,14 +4,10 @@ const Schema = mongoose.Schema;
 var ObjectId = mongoose.Types.ObjectId;
 
 export const MessageHistorySchema = new Schema({
-  sender: {
+  parties: [{
     type: ObjectId,
     ref: 'User',
-  },
-  recipient: {
-    type: ObjectId,
-    ref: 'User',
-  },
+  }],
   messageList: [{
     type: ObjectId,
     ref: 'Messages',
