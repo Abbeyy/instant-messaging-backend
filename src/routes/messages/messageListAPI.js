@@ -6,17 +6,10 @@ var ObjectId = mongoose.Types.ObjectId;
 
 const messagesRouter = express.Router();
 
-messagesRouter.get('/bySenderId', (req, res, next) => {
-    const _id = req.query._id
-
-    Messages.findBySenderId(_id)
-    .then(data => res.json(data)).catch(next)
-});
-
-messagesRouter.get('/bySenderIds', (req, res, next) => {
+messagesRouter.get('/byIds', (req, res, next) => {
     const _ids = req.query._ids
 
-    Messages.findBySenderIds(_ids)
+    Messages.findByIds(_ids)
     .then(data => res.json(data)).catch(next)
 });
 

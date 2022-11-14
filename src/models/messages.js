@@ -15,14 +15,9 @@ export const MessagesSchema = new Schema({
   }
 });
 
-MessagesSchema.statics.findBySenderId = function(senderId) {
-  const senderObjectId = new ObjectId(`${senderId}`)
-  return this.find({sender: senderObjectId})
-}
-
-MessagesSchema.statics.findBySenderIds = function(senderIds) {
-  const senderObjectIds = senderIds.map((id) => new ObjectId(`${id}`))
-  return this.find({sender: senderObjectIds})
+MessagesSchema.statics.findByIds = function(ids) {
+  const messageIds = ids.map((id) => new ObjectId(`${id}`))
+  return this.find({_id: messageIds})
 }
 
 export const Messages = mongoose.model('Messages', MessagesSchema);
