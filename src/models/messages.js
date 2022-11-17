@@ -7,7 +7,6 @@ export const MessagesSchema = new Schema({
   messages: [String],
   timeStamp: {
     type: Date, 
-    required: true
   },
   sender: {
     type: ObjectId,

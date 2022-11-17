@@ -9,7 +9,6 @@ import currentUserRouter from './src/routes/currentUserAPI.js'
 import dotenv from 'dotenv'
 import messageHistoryRouter from './src/routes/messages/messageHistoryAPI.js';
 import userRouter from './src/routes/userAPI.js';
-import chatRouter from './src/routes/messages/chatAPI.js';
 import messagesRouter from './src/routes/messages/messageListAPI.js';
 
 dotenv.config();
@@ -45,5 +44,3 @@ app.use('/currentUser', currentUserRouter);
 app.use('/messageHistory', messageHistoryRouter);
 
 app.use('/messageList', messagesRouter);
-
-app.use('/chat', chatRouter);
